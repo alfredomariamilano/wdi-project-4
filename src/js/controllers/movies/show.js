@@ -8,6 +8,7 @@ function MoviesShowCtrl(Movie, $stateParams, $state, CurrentUserService, $locati
   vm.user = CurrentUserService.getUser();
 
   Movie.get($stateParams, data => {
-      vm.movie = data.movie;
+    console.log(data);
+      vm.movie = data;
     });
 }

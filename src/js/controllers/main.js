@@ -8,15 +8,6 @@ function MainCtrl($http, $rootScope, CurrentUserService, $state, API) {
 
   vm.greeting = 'test';
 
-//   $http({
-//   method: 'GET',
-//   url: `${API}/movies`
-// }).then((response) => {
-//   console.log(response);
-// }, (response) => {
-//     console.log('bluuuup', response);
-//   });
-
   vm.user = CurrentUserService.getUser();
 
   vm.logout = () => {
