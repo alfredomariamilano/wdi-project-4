@@ -1,5 +1,26 @@
 @import "bower";
 
 body {
+  text-align: center;
   background: gold;
+  padding-top: 50px;
+}
+
+img {
+  max-height: 75vh;
+}
+
+main {
+  div.container {
+    div {
+      img {
+        max-height: 75vh;
+      }
+    }
+  }
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
 }

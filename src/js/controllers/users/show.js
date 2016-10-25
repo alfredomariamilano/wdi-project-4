@@ -7,7 +7,8 @@ function UsersShowCtrl(User, $stateParams, $state){
   const vm = this;
 
   User.get($stateParams, data => {
-    console.log(data);
+    vm.user = data;
+    console.log(vm.user);
   });
 
   vm.userDelete = () => {

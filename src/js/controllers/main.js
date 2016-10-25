@@ -1,14 +1,22 @@
 angular
-  .module("discovereel")
-  .controller("MainCtrl", MainCtrl);
+.module("discovereel")
+.controller("MainCtrl", MainCtrl);
 
-MainCtrl.$inject = ['$http', '$rootScope', 'CurrentUserService', '$state', 'API'];
-function MainCtrl($http, $rootScope, CurrentUserService, $state, API) {
+MainCtrl.$inject = ['$http', '$rootScope', 'CurrentUserService', '$state', 'API', 'User'];
+function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
   const vm = this;
 
-  vm.greeting = 'test';
-
   vm.user = CurrentUserService.getUser();
+
+  if (vm.user) {
+    User
+    .query(vm.user.id)
+    .$promise
+    .then(data => {
+      vm.user.not_watched = data[0].not_watched;
+      vm.user.watched = data[0].watched;
+    });
+  }
 
   vm.logout = () => {
     event.preventDefault();

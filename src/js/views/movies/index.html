@@ -4,6 +4,6 @@
     <img ui-sref="MoviesShow({ id: index.movie.id })" ng-src="http://image.tmdb.org/t/p/w500{{ index.movie.poster_path }}">
   </div>
 
-<input class="btn btn-primary" ng-click="index.watched(main.user)" value="Watched">
-<input class="btn btn-primary" ng-click="index.notWatched(main.user)" value="Not Watched">
+<button type="button" class="btn btn-primary" ng-click="index.watched(main.user)">Watched</button>
+<button type="button" class="btn btn-primary" ng-click="index.notWatched(main.user)">Or not?!</button>
 </div>

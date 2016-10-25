@@ -5,4 +5,8 @@
     <h5>Release date: {{ show.movie.release_date }}</h5>
     <p>{{ show.movie.overview }}</p>
   </div>
+  <div ng-repeat="image in show.movie.images.backdrops">
+    <img ng-src="http://image.tmdb.org/t/p/w500{{ image.file_path }}" alt="" />
+  </div>
+
 </div>
