@@ -12,7 +12,7 @@
       <h5 ng-if="show.movie">Release date: {{ show.movie.release_date }}</h5>
       <i ng-repeat="star in show.stars track by $index" class="fa fa-star" aria-hidden="true"></i>
       <p>{{ show.movie.overview }}<br>
-      <a href="http://www.imdb.com/title/{{show.movie.imdb_id}}">Check it out on IMDb</a></p>
+      <a href="http://www.imdb.com/title/{{show.movie.imdb_id}}" target="_blank">Check it out on IMDb</a></p>
 
       <button type="button" ng-if="show.watched" ng-click="show.updateViewings()">Watched</button>
     </div>
