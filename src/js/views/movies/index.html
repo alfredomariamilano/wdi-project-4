@@ -1,9 +1,11 @@
-<h1>Movies</h1>
-<div class="container">
-  <div>
-    <img ui-sref="MoviesShow({ id: index.movie.id })" ng-src="http://image.tmdb.org/t/p/w500{{ index.movie.poster_path }}">
+<div class="loading">
+<i class="fa fa-spinner fa-pulse fa-3x fa-fw" ng-if="!index.movie"></i>
+</div>
+<div class="container moviesIndex" ng-show="index.movie">
+  <div class="indexImage">
+    <img  ng-src="http://image.tmdb.org/t/p/w500{{ index.movie.poster_path }}">
   </div>
-
-<button type="button" class="btn btn-primary" ng-click="index.watched(main.user)">Watched</button>
-<button type="button" class="btn btn-primary" ng-click="index.notWatched(main.user)">Or not?!</button>
+  <p><i class="fa fa-long-arrow-left" aria-hidden="true"></i><i class="fa fa-long-arrow-right" aria-hidden="true"></i></p>
+  <button type="button" ng-click="index.watched(main.user)">Watched</button>
+  <button type="button" ng-click="index.notWatched(main.user)">Or not?!</button>
 </div>

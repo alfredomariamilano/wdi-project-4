@@ -1,1 +1,40 @@
-<h1>Home</h1>
+<div class="homepage">
+  <div class="logo eight columns">
+    <img src="/images/watchedornot.png" alt="" />
+
+    <h5>
+    Which movies have you watched?
+  </h5>
+  </div>
+  <a id="arrow-down" href="#blup">
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+  </a>
+</div>
+<div class="container" id="blup">
+  <div class="row">
+    <div class="six columns">
+      <h2>Login</h2>
+      <form ng-submit="home.login()">
+        <div>
+          <input class="u-full-width" type="email" name="email" ng-model="home.user.login.email" placeholder="Email">
+        </div>
+        <div>
+          <input class="u-full-width" type="password" name="password" ng-model="home.user.login.password" placeholder="Password">
+        </div>
+        <input type="submit" value="Login">
+      </form>
+    </div>
+    <div class="six columns">
+      <h2>Register</h2>
+      <div class="">
+        <form ng-submit="home.register()">
+          <input class="u-full-width" type="text" name="username" ng-model="home.user.register.username" placeholder="Username">
+          <input class="u-full-width" type="email" name="email" ng-model="home.user.register.email" placeholder="Email">
+          <input class="u-full-width" type="password" name="password" ng-model="home.user.register.password" placeholder="Password">
+          <input class="u-full-width" type="password" name="password_confirmation" ng-model="home.user.register.password_confirmation" placeholder="Password confirmation">
+          <input type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

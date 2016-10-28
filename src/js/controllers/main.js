@@ -32,4 +32,21 @@ function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
     vm.user = null;
     $state.go("home");
   });
+
+  vm.openNav = function() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    if (document.getElementById('myDropdown')) {
+      document.getElementById('myDropdown').style.backgroundColor = "rgba(0,0,0,-0.6)";
+    }
+  };
+
+  vm.closeNav = function (){
+    document.getElementById("mySidenav").style.width = "0";
+    document.body.style.backgroundColor = "#FFFFFF";
+    if (document.getElementById('myDropdown')) {
+      document.getElementById('myDropdown').style.backgroundColor = "#FFFFFF";
+    }
+  };
+
 }

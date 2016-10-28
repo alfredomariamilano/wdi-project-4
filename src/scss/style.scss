@@ -1,26 +1,31 @@
-@import "bower";
+@import "skeleton/normalize";
+@import "skeleton/skeleton";
+@import "partials/homepage";
+@import "partials/movieshow";
+@import "partials/moviesindex";
+@import "partials/navbar";
 
 body {
+  font-family: 'Raleway', sans-serif;
   text-align: center;
-  background: gold;
-  padding-top: 50px;
+  background: #FFFFFF;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  transition: background-color .5s;
+  border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 img {
   max-height: 75vh;
+  max-width: 100%;
 }
 
-main {
-  div.container {
-    div {
-      img {
-        max-height: 75vh;
-      }
-    }
-  }
-}
-
-ul {
-  padding: 0;
-  list-style-type: none;
+h2 {
+  text-transform: uppercase;
 }

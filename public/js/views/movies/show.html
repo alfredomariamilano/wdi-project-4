@@ -1,12 +1,30 @@
-<div class="container">
-  <img ng-src="http://image.tmdb.org/t/p/w500{{ show.movie.poster_path }}" alt=""/>
-  <div class="col-md-6">
-    <h2>{{ show.movie.title }}</h2>
-    <h5>Release date: {{ show.movie.release_date }}</h5>
-    <p>{{ show.movie.overview }}</p>
-  </div>
-  <div ng-repeat="image in show.movie.images.backdrops">
-    <img ng-src="http://image.tmdb.org/t/p/w500{{ image.file_path }}" alt="" />
+<div class="loading">
+<i class="fa fa-spinner fa-pulse fa-3x fa-fw" ng-if="!show.movie"></i>
+</div>
+
+<div class="container MovieShow" ng-if="show.movie" id="why">
+  <div class="row">
+    <div class="six columns">
+      <img ng-src="http://image.tmdb.org/t/p/w500{{ show.movie.poster_path }}" alt=""/>
+    </div>
+    <div class="six columns">
+      <h2>{{ show.movie.title }}</h2>
+      <h5 ng-if="show.movie">Release date: {{ show.movie.release_date }}</h5>
+      <i ng-repeat="star in show.stars track by $index" class="fa fa-star" aria-hidden="true"></i>
+      <p>{{ show.movie.overview }}<br>
+      <a href="http://www.imdb.com/title/{{show.movie.imdb_id}}">Check it out on IMDb</a></p>
+
+      <button type="button" ng-if="show.watched" ng-click="show.updateViewings()">Watched</button>
+    </div>
   </div>
 
+  <h3 ng-if="show.movie.images.backdrops.length > 0">IMAGES</h3>
+  <div class="images">
+    <img  ng-repeat="image in show.movie.images.backdrops" ng-src="http://image.tmdb.org/t/p/w500{{ image.file_path }}" alt="" />
+  </div>
+
+  <h3 ng-if="show.movie.videos.results.length > 0">VIDEOS</h3>
+  <div class="video-container" ng-if="show.movie.videos.results.length > 0">
+    <iframe ng-repeat="video in show.movie.videos.results" ng-src="{{trustSrc('https://www.youtube.com/embed/'+video.key+'?controls=0&showinfo=0')}}" frameborder="0" allowfullscreen controls="false"></iframe>
+  </div>
 </div>
