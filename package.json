@@ -40,5 +40,9 @@
     "gulp-wait": "0.0.2",
     "gulp-webserver": "^0.9.1",
     "main-bower-files": "^2.13.1"
-  }
+  },
+  "scripts": {
+  "postinstall": "bower install && gulp",
+  "start": "nf start"
+}
 }
