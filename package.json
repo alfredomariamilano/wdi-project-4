@@ -45,7 +45,7 @@
     "node": ">=6.x"
   },
   "scripts": {
-  "postinstall": "bower install && gulp",
+  "postinstall": "bower cache clean && bower install && gulp",
   "start": "nf start"
 }
 }
