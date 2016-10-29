@@ -3,7 +3,7 @@
   <option selected value>Select Filter</option>
   <option value="movie.title" >Title</option>
   <option value="-movie.vote_average">Score</option>
-  <option value="-">Latest</option>
+  <option value="-movie.release_date">Latest releases</option>
 </select>
 <div class="container userShow">
   <div class="six columns">
@@ -13,6 +13,9 @@
         <!-- <i ng-repeat="star in watched.movie.vote_average track by $index" class="fa fa-star" aria-hidden="true"></i> -->
         <p ng-if="sortBy == '-movie.vote_average'">
           Score: {{watched.movie.vote_average}}
+        </p>
+        <p ng-if="sortBy == '-movie.release_date'">
+          Release date: {{watched.movie.release_date}}
         </p>
       </li>
     </ul>
@@ -24,6 +27,9 @@
         <!-- <i ng-repeat="star in unwatched.movie.vote_average track by $index" class="fa fa-star" aria-hidden="true"></i> -->
         <p ng-if="sortBy == '-movie.vote_average'">
           Score: {{unwatched.movie.vote_average}}
+        </p>
+        <p ng-if="sortBy == '-movie.release_date'">
+          Release date: {{unwatched.movie.release_date}}
         </p>
       </li>
     </ul>

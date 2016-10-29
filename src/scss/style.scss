@@ -29,3 +29,18 @@ img {
 h2 {
   text-transform: uppercase;
 }
+
+div.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: $my-black url("/images/arrowup.png") no-repeat center 30%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}

@@ -2,7 +2,7 @@
 <i class="fa fa-spinner fa-pulse fa-3x fa-fw" ng-if="!show.movie"></i>
 </div>
 
-<div class="container MovieShow" ng-if="show.movie" id="why">
+<div class="container MovieShow" ng-show="show.movie" id="why">
   <div class="row">
     <div class="six columns">
       <img ng-src="http://image.tmdb.org/t/p/w500{{ show.movie.poster_path }}" alt=""/>
@@ -27,4 +27,5 @@
   <div class="video-container" ng-if="show.movie.videos.results.length > 0">
     <iframe ng-repeat="video in show.movie.videos.results" ng-src="{{trustSrc('https://www.youtube.com/embed/'+video.key+'?controls=0&showinfo=0')}}" frameborder="0" allowfullscreen controls="false"></iframe>
   </div>
+  <div class="back-to-top">Back to Top</a>
 </div>

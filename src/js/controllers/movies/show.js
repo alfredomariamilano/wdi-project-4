@@ -37,4 +37,19 @@ function MoviesShowCtrl(Movie, Viewing, $stateParams, $state, CurrentUserService
     }
   };
 
+  var amountScrolled = 300;
+
+$(window).scroll(function() {
+	if ( $(window).scrollTop() > amountScrolled ) {
+		$('div.back-to-top').fadeIn('slow');
+	} else {
+		$('div.back-to-top').fadeOut('slow');
+	}
+});
+
+  $('div.back-to-top').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+});
+
 }
