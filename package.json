@@ -41,6 +41,9 @@
     "gulp-webserver": "^0.9.1",
     "main-bower-files": "^2.13.1"
   },
+  "engines": {
+    "node": ">=6.x"
+  },
   "scripts": {
   "postinstall": "bower install && gulp",
   "start": "nf start"
