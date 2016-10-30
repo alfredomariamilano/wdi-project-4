@@ -45,6 +45,6 @@
     "node": ">=6.x"
   },
   "scripts": {
-  "start": "nf start"
+  "start": "node index.js"
 }
 }
