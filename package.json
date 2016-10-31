@@ -18,7 +18,8 @@
   "homepage": "https://github.com/alfredomariamilano/wdi-project-4#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "bower": "latest"
+    "bower": "latest",
+    "forever": "^0.15.2"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
