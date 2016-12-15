@@ -8,7 +8,6 @@
 position: relative;
 background-position: center;
 background-repeat: no-repeat;
-background-image: url("../images/unwatched.png");
     img {
       max-width: 100%;
     }
@@ -17,4 +16,8 @@ background-image: url("../images/unwatched.png");
 
 .watched {
   background-image: url("../images/watched.png") !important;
+}
+
+.unwatched {
+  background-image: url("../images/unwatched.png") !important;
 }

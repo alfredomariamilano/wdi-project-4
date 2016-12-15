@@ -100,9 +100,11 @@ function MoviesIndexCtrl(Movie, Viewing, $scope){
     vm.swipe = e.throwDirection == gajus.Swing.Card.DIRECTION_RIGHT ? 'right' : 'left';
 
     if (vm.swipe === 'right') {
+      $('.indexImage').addClass('unwatched');
       $('.indexImage').removeClass('watched');
     } else if (vm.swipe === 'left'){
       $('.indexImage').addClass('watched');
+      $('.indexImage').removeClass('unwatched');
     }
 
   });
