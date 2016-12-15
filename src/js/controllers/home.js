@@ -1,8 +1,8 @@
 angular
-  .module("discovereel")
-  .controller("HomeCtrl", HomeCtrl);
+  .module('discovereel')
+  .controller('HomeCtrl', HomeCtrl);
 
-HomeCtrl.$inject = ["User", "CurrentUserService", "$state"];
+HomeCtrl.$inject = ['User', 'CurrentUserService', '$state'];
 function HomeCtrl(User, CurrentUserService, $state) {
   const vm = this;
 
@@ -30,5 +30,5 @@ function HomeCtrl(User, CurrentUserService, $state) {
       });
   };
 
-  if (CurrentUserService.getUser()) $state.go("MoviesIndex");
+  if (CurrentUserService.getUser()) $state.go('MoviesIndex');
 }

@@ -1,5 +1,5 @@
 angular
-.module("discovereel")
+.module('discovereel')
 .config(SetupInterceptor);
 
 SetupInterceptor.$inject = ['$httpProvider'];

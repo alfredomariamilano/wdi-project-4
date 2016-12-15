@@ -1,6 +1,6 @@
 angular
-.module("discovereel")
-.controller("MainCtrl", MainCtrl);
+.module('discovereel')
+.controller('MainCtrl', MainCtrl);
 
 MainCtrl.$inject = ['$http', '$rootScope', 'CurrentUserService', '$state', 'API', 'User'];
 function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
@@ -23,29 +23,29 @@ function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
     CurrentUserService.clearUser();
   };
 
-  $rootScope.$on("loggedIn", () => {
+  $rootScope.$on('loggedIn', () => {
     vm.user = CurrentUserService.getUser();
-    $state.go("MoviesIndex");
+    $state.go('MoviesIndex');
   });
 
-  $rootScope.$on("loggedOut", () => {
+  $rootScope.$on('loggedOut', () => {
     vm.user = null;
-    $state.go("home");
+    $state.go('home');
   });
 
   vm.openNav = function() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    document.getElementById('mySidenav').style.width = '250px';
+    document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
     if (document.getElementById('myDropdown')) {
-      document.getElementById('myDropdown').style.backgroundColor = "rgba(0,0,0,-0.6)";
+      document.getElementById('myDropdown').style.backgroundColor = 'rgba(0,0,0,-0.6)';
     }
   };
 
   vm.closeNav = function (){
-    document.getElementById("mySidenav").style.width = "0";
-    document.body.style.backgroundColor = "#FFFFFF";
+    document.getElementById('mySidenav').style.width = '0';
+    document.body.style.backgroundColor = '#FFFFFF';
     if (document.getElementById('myDropdown')) {
-      document.getElementById('myDropdown').style.backgroundColor = "#FFFFFF";
+      document.getElementById('myDropdown').style.backgroundColor = '#FFFFFF';
     }
   };
 

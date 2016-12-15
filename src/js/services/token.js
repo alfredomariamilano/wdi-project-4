@@ -1,8 +1,8 @@
 angular
-  .module("discovereel")
-  .service("TokenService", TokenService);
+  .module('discovereel')
+  .service('TokenService', TokenService);
 
-TokenService.$inject = ["$window", "jwtHelper"];
+TokenService.$inject = ['$window', 'jwtHelper'];
 function TokenService($window, jwtHelper){
   const self       = this;
 
@@ -12,11 +12,11 @@ function TokenService($window, jwtHelper){
   self.clearToken  = clearToken;
 
   function setToken(token){
-    return $window.localStorage.setItem("auth-token", token);
+    return $window.localStorage.setItem('auth-token', token);
   }
 
   function getToken(){
-    return $window.localStorage.getItem("auth-token");
+    return $window.localStorage.getItem('auth-token');
   }
 
   function decodeToken(){
@@ -25,7 +25,7 @@ function TokenService($window, jwtHelper){
   }
 
   function clearToken(){
-    return $window.localStorage.removeItem("auth-token");
+    return $window.localStorage.removeItem('auth-token');
   }
 
 }

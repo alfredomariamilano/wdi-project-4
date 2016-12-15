@@ -1,8 +1,8 @@
 angular
-.module("discovereel")
-.controller("MoviesShowCtrl", MoviesShowCtrl);
+.module('discovereel')
+.controller('MoviesShowCtrl', MoviesShowCtrl);
 
-MoviesShowCtrl.$inject = ["Movie", "Viewing", "$stateParams", "$state", "CurrentUserService", "$location", "$scope", "$sce"];
+MoviesShowCtrl.$inject = ['Movie', 'Viewing', '$stateParams', '$state', 'CurrentUserService', '$location', '$scope', '$sce'];
 function MoviesShowCtrl(Movie, Viewing, $stateParams, $state, CurrentUserService, $location, $scope, $sce) {
   const vm = this;
   $scope.trustSrc = function(src) {
@@ -39,17 +39,17 @@ function MoviesShowCtrl(Movie, Viewing, $stateParams, $state, CurrentUserService
 
   var amountScrolled = 300;
 
-$(window).scroll(function() {
-	if ( $(window).scrollTop() > amountScrolled ) {
-		$('div.back-to-top').fadeIn('slow');
-	} else {
-		$('div.back-to-top').fadeOut('slow');
-	}
-});
+  $(window).scroll(function() {
+    if ( $(window).scrollTop() > amountScrolled ) {
+      $('div.back-to-top').fadeIn('slow');
+    } else {
+      $('div.back-to-top').fadeOut('slow');
+    }
+  });
 
   $('div.back-to-top').click(function(){
-    $("html, body").animate({ scrollTop: 0 }, 600);
+    $('html, body').animate({ scrollTop: 0 }, 600);
     return false;
-});
+  });
 
 }

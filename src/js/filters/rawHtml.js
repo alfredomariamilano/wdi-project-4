@@ -1,5 +1,5 @@
 angular
-  .module("discovereel")
+  .module('discovereel')
   .filter('rawHtml', rawHtml);
 
 rawHtml.$inject = ['$sce'];

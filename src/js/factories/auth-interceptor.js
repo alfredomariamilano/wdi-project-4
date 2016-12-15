@@ -1,6 +1,6 @@
 angular
-.module("discovereel")
-.factory("AuthInterceptor", AuthInterceptor);
+.module('discovereel')
+.factory('AuthInterceptor', AuthInterceptor);
 
 AuthInterceptor.$inject = ['API', 'TokenService'];
 function AuthInterceptor(API, TokenService){

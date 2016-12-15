@@ -1,8 +1,8 @@
 angular
-.module("discovereel")
-.controller("UsersShowCtrl", UsersShowCtrl);
+.module('discovereel')
+.controller('UsersShowCtrl', UsersShowCtrl);
 
-UsersShowCtrl.$inject = ["User", "$stateParams", "$state", "$scope"];
+UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$scope'];
 function UsersShowCtrl(User, $stateParams, $state, $scope){
   const vm = this;
 
@@ -16,7 +16,7 @@ function UsersShowCtrl(User, $stateParams, $state, $scope){
     .delete($stateParams)
     .$promise
     .then(data => {
-      $state.go("UsersIndex");
+      $state.go('UsersIndex');
     });
   };
 }

@@ -1,8 +1,8 @@
 angular
-  .module("discovereel")
-  .controller("RegisterCtrl", RegisterCtrl);
+  .module('discovereel')
+  .controller('RegisterCtrl', RegisterCtrl);
 
-RegisterCtrl.$inject = ["User", "CurrentUserService"];
+RegisterCtrl.$inject = ['User', 'CurrentUserService'];
 function RegisterCtrl(User, CurrentUserService){
   const vm    = this;
 

@@ -1,8 +1,8 @@
 angular
-  .module("discovereel")
-  .controller("LoginCtrl", LoginCtrl);
+  .module('discovereel')
+  .controller('LoginCtrl', LoginCtrl);
 
-LoginCtrl.$inject = ["User", "CurrentUserService"];
+LoginCtrl.$inject = ['User', 'CurrentUserService'];
 function LoginCtrl(User, CurrentUserService) {
   const vm = this;
   vm.login = () => {

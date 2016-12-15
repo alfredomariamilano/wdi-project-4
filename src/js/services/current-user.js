@@ -1,8 +1,8 @@
 angular
-  .module("discovereel")
-  .service("CurrentUserService", CurrentUserService);
+  .module('discovereel')
+  .service('CurrentUserService', CurrentUserService);
 
-CurrentUserService.$inject = ["$rootScope", "TokenService"];
+CurrentUserService.$inject = ['$rootScope', 'TokenService'];
 function CurrentUserService($rootScope, TokenService){
   let currentUser = TokenService.decodeToken();
 
@@ -11,7 +11,7 @@ function CurrentUserService($rootScope, TokenService){
     saveUser(user) {
       user.id = user._id ? user._id : user.id;
       currentUser = user;
-      $rootScope.$broadcast("loggedIn");
+      $rootScope.$broadcast('loggedIn');
     },
     getUser() {
       return currentUser;
@@ -19,7 +19,7 @@ function CurrentUserService($rootScope, TokenService){
     clearUser() {
       currentUser = null;
       TokenService.clearToken();
-      $rootScope.$broadcast("loggedOut");
+      $rootScope.$broadcast('loggedOut');
     }
   };
 }
