@@ -31,7 +31,7 @@ function HomeCtrl(User, CurrentUserService, $state) {
   };
 
   $('a i').click(() => {
-    $('html, body').animate({ scrollTop: $('#blup').scrollTop() }, 1000);
+    $('html, body').animate({ scrollTop: $('#blup').position().top }, 1000);
   });
 
   if (CurrentUserService.getUser()) $state.go('MoviesIndex');
