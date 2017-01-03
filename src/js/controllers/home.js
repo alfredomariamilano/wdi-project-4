@@ -1,6 +1,6 @@
 angular
-  .module('discovereel')
-  .controller('HomeCtrl', HomeCtrl);
+.module('discovereel')
+.controller('HomeCtrl', HomeCtrl);
 
 HomeCtrl.$inject = ['User', 'CurrentUserService', '$state'];
 function HomeCtrl(User, CurrentUserService, $state) {
@@ -8,27 +8,31 @@ function HomeCtrl(User, CurrentUserService, $state) {
 
   vm.login = () => {
     User
-      .login(vm.user.login)
-      .$promise
-      .then(data => {
-        const user = data.user ? data.user : null;
-        if (user) {
-          CurrentUserService.saveUser(user);
-        }
-      });
+    .login(vm.user.login)
+    .$promise
+    .then(data => {
+      const user = data.user ? data.user : null;
+      if (user) {
+        CurrentUserService.saveUser(user);
+      }
+    });
   };
 
   vm.register = () => {
     User
-      .register( vm.user.register )
-      .$promise
-      .then(data => {
-        const user = data.user ? data.user : null;
-        if (user) {
-          CurrentUserService.saveUser(user);
-        }
-      });
+    .register( vm.user.register )
+    .$promise
+    .then(data => {
+      const user = data.user ? data.user : null;
+      if (user) {
+        CurrentUserService.saveUser(user);
+      }
+    });
   };
+
+  $('a i').click(() => {
+    $('html, body').animate({ scrollTop: $(document).height() }, 1000);
+  });
 
   if (CurrentUserService.getUser()) $state.go('MoviesIndex');
 }
