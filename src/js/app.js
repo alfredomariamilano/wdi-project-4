@@ -7,5 +7,6 @@ angular
   'ngMessages',
   'contenteditable',
   'angularMoment',
-  '720kb.socialshare'
+  '720kb.socialshare',
+  'angular.filter'
 ]);

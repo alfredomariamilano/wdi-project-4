@@ -9,14 +9,13 @@ function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
   vm.user = CurrentUserService.getUser();
 
   if (vm.user) {
-    // vm.user.not_watched;
-    // vm.user.watched;
     User
     .query(vm.user.id)
     .$promise
     .then(data => {
       vm.user.not_watched = data[0].not_watched;
       vm.user.watched = data[0].watched;
+      $rootScope.$broadcast('userData')
     });
   }
 

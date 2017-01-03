@@ -9,6 +9,7 @@ function UsersShowCtrl(User, $stateParams, $state, $scope){
   User.get($stateParams, data => {
     vm.user = data;
     $scope.$parent.main.user = data;
+    console.log(vm.user);
   });
 
   vm.userDelete = () => {

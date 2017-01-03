@@ -9,7 +9,7 @@
   <div class="six columns">
     <h2>Watched</h2>
     <ul>
-      <li ng-repeat="watched in show.user.watched | orderBy: sortBy track by $index"><a ui-sref="MoviesShow({id: watched.movie.id})">{{ watched.movie.title }}</a><br />
+      <li ng-repeat="watched in show.user.watched | orderBy: sortBy | unique: 'movie.id' track by $index"><a ui-sref="MoviesShow({id: watched.movie.id})">{{ watched.movie.title }}</a><br />
         <!-- <i ng-repeat="star in watched.movie.vote_average track by $index" class="fa fa-star" aria-hidden="true"></i> -->
         <p ng-if="sortBy == '-movie.vote_average'">
           Score: {{watched.movie.vote_average}}
@@ -23,7 +23,7 @@
   <div class="six columns">
     <h2>Watchlist</h2>
     <ul>
-      <li ng-repeat="unwatched in show.user.not_watched | orderBy: sortBy track by $index"><a ui-sref="MoviesShow({id: unwatched.movie.id})">{{ unwatched.movie.title }}</a><br />
+      <li ng-repeat="unwatched in show.user.not_watched | orderBy: sortBy | unique: 'movie.id' track by $index"><a ui-sref="MoviesShow({id: unwatched.movie.id})">{{ unwatched.movie.title }}</a><br />
         <!-- <i ng-repeat="star in unwatched.movie.vote_average track by $index" class="fa fa-star" aria-hidden="true"></i> -->
         <p ng-if="sortBy == '-movie.vote_average'">
           Score: {{unwatched.movie.vote_average}}

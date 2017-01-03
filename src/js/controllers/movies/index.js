@@ -2,8 +2,8 @@ angular
 .module('discovereel')
 .controller('MoviesIndexCtrl', MoviesIndexCtrl);
 
-MoviesIndexCtrl.$inject = ['Movie', 'Viewing', '$scope'];
-function MoviesIndexCtrl(Movie, Viewing, $scope){
+MoviesIndexCtrl.$inject = ['Movie', 'Viewing', '$scope', '$rootScope'];
+function MoviesIndexCtrl(Movie, Viewing, $scope, $rootScope){
   const vm = this;
 
   vm.movies = [];
@@ -22,7 +22,12 @@ function MoviesIndexCtrl(Movie, Viewing, $scope){
     });
   };
 
-  vm.getMovies();
+  if ($scope.$parent.main.user) {
+    vm.getMovies();
+  }
+  $rootScope.$on('userData', () => {
+    vm.getMovies();
+  });
 
   vm.setViewing = () => {
     Viewing
@@ -77,14 +82,15 @@ function MoviesIndexCtrl(Movie, Viewing, $scope){
         if (objectFound) {
           console.log('Object found double', objectFound);
           vm.movies.splice(elementPos, 1);
+          vm.checkMovies();
         }
       }
     }
   };
 
   var stack,
-    cardElement,
-    throwOutConfidenceElements;
+  cardElement,
+  throwOutConfidenceElements;
 
   const config = {
     throwOutConfidence: (offset, element) => {
