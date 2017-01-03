@@ -7,6 +7,8 @@ function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
   const vm = this;
 
   vm.user = CurrentUserService.getUser();
+  vm.user.not_watched;
+  vm.user.watched;
 
   if (vm.user) {
     User

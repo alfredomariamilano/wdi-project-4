@@ -6,12 +6,16 @@ MoviesIndexCtrl.$inject = ['Movie', 'Viewing', '$scope'];
 function MoviesIndexCtrl(Movie, Viewing, $scope){
   const vm = this;
 
+  vm.movies = [];
+
   vm.getMovies = () => {
     Movie
     .query()
     .$promise
     .then(data => {
-      vm.movies = data;
+      $.each(data, (i, movie) => {
+        vm.movies.push(movie);
+      });
       vm.checkViewings($scope.$parent.main.user.watched);
       vm.checkViewings($scope.$parent.main.user.not_watched);
       vm.movie = vm.movies[0];
@@ -43,8 +47,10 @@ function MoviesIndexCtrl(Movie, Viewing, $scope){
       user_id: user.id,
       movie_id: vm.movie.id
     };
-    $scope.$parent.main.user.watched.push({movie: {id: vm.movie.id}});
-    $scope.$parent.main.user.watched.push({movie: {title: vm.movie.title}});
+    $scope.$parent.main.user.watched.push({ movie: {
+      id: vm.movie.id,
+      title: vm.movie.title
+    }});
     vm.setViewing();
   };
 
@@ -54,8 +60,10 @@ function MoviesIndexCtrl(Movie, Viewing, $scope){
       user_id: user.id,
       movie_id: vm.movie.id
     };
-    $scope.$parent.main.user.not_watched.push({movie: {id: vm.movie.id}});
-    $scope.$parent.main.user.not_watched.push({movie: {title: vm.movie.title}});
+    $scope.$parent.main.user.not_watched.push({movie: {
+      id: vm.movie.id,
+      title: vm.movie.title
+    }});
     vm.setViewing();
   };
 
@@ -67,6 +75,7 @@ function MoviesIndexCtrl(Movie, Viewing, $scope){
         }).indexOf(viewing[i].movie.id);
         var objectFound = vm.movies[elementPos];
         if (objectFound) {
+          console.log('Object found double', objectFound);
           vm.movies.splice(elementPos, 1);
         }
       }
