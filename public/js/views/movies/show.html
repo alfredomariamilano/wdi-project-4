@@ -1,5 +1,5 @@
 <div class="loading">
-<i class="fa fa-spinner fa-pulse fa-3x fa-fw" ng-if="!show.movie"></i>
+  <i class="fa fa-spinner fa-pulse fa-3x fa-fw" ng-if="!show.movie"></i>
 </div>
 
 <div class="container MovieShow" ng-show="show.movie" id="why">
@@ -15,8 +15,15 @@
       <i ng-if="show.movie.vote_average >= 5" class="fa fa-star" aria-hidden="true"></i>
       <i ng-if="show.movie.vote_average >= 7" class="fa fa-star" aria-hidden="true"></i>
       <i ng-if="show.movie.vote_average >= 9" class="fa fa-star" aria-hidden="true"></i>
-      <p>{{ show.movie.overview }}<br>
-      <a href="http://www.imdb.com/title/{{show.movie.imdb_id}}" target="_blank">Check it out on IMDb</a></p>
+      <p>{{ show.movie.overview }}
+        <br>
+        <br>
+        <a href="http://www.imdb.com/title/{{show.movie.imdb_id}}" target="_blank">Check it out on IMDb</a>
+        <br>
+        <span>or</span>
+        <br>
+        <a href="https://www.themoviedb.org/movie/{{show.movie.tmdb_id}}" target="_blank">on the Movie Database!</a>
+      </p>
 
       <button type="button" ng-if="show.watched" ng-click="show.updateViewings()">Watched</button>
     </div>
@@ -32,4 +39,4 @@
     <iframe ng-repeat="video in show.movie.videos.results" ng-src="{{trustSrc('https://www.youtube.com/embed/'+video.key+'?controls=0&showinfo=0')}}" frameborder="0" allowfullscreen controls="false"></iframe>
   </div>
   <div class="back-to-top">Back to Top</a>
-</div>
+  </div>
