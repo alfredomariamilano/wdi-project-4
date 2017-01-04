@@ -130,5 +130,7 @@ function MoviesIndexCtrl(Movie, Viewing, $scope, $rootScope){
     } else if (vm.swipe === 'left'){
       vm.watched($scope.$parent.main.user);
     }
+    $('.indexImage').removeClass('watched');
+    $('.indexImage').removeClass('unwatched');
   });
 }
