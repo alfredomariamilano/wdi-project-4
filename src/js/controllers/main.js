@@ -6,8 +6,6 @@ MainCtrl.$inject = ['$http', '$rootScope', 'CurrentUserService', '$state', 'API'
 function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
   const vm = this;
 
-  window.scrollTo(0, 1);
-
   vm.user = CurrentUserService.getUser();
 
   if (vm.user) {
