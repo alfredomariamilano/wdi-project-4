@@ -10,7 +10,11 @@
     <div class="six columns">
       <h2>{{ show.movie.title }}</h2>
       <h5 ng-if="show.movie">Release date: {{ show.movie.release_date }}</h5>
-      <i ng-repeat="star in show.stars track by $index" class="fa fa-star" aria-hidden="true"></i>
+      <i ng-if="show.movie.vote_average >= 1" class="fa fa-star" aria-hidden="true"></i>
+      <i ng-if="show.movie.vote_average >= 3" class="fa fa-star" aria-hidden="true"></i>
+      <i ng-if="show.movie.vote_average >= 5" class="fa fa-star" aria-hidden="true"></i>
+      <i ng-if="show.movie.vote_average >= 7" class="fa fa-star" aria-hidden="true"></i>
+      <i ng-if="show.movie.vote_average >= 9" class="fa fa-star" aria-hidden="true"></i>
       <p>{{ show.movie.overview }}<br>
       <a href="http://www.imdb.com/title/{{show.movie.imdb_id}}" target="_blank">Check it out on IMDb</a></p>
 
