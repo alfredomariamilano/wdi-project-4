@@ -5,13 +5,7 @@
 @import "partials/moviesindex";
 @import "partials/navbar";
 
-html {
-    overflow: hidden;
-}
-
 body {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling:touch;
   -webkit-touch-callout: none; /* iOS Safari */
    -webkit-user-select: none; /* Chrome/Safari/Opera */
     -khtml-user-select: none; /* Konqueror */
