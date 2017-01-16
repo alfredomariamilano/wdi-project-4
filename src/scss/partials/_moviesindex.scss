@@ -5,9 +5,12 @@
     line-height: 0px;
   }
   .indexImage {
-position: relative;
-background-position: center;
-background-repeat: no-repeat;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     img {
       max-width: 100%;
     }

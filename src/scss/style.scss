@@ -27,7 +27,7 @@ body {
 }
 
 img {
-  max-height: 70vh;
+  max-height: calc(100vh - 220px);
   max-width: 100%;
 }
 
