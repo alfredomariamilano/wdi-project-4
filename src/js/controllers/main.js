@@ -36,6 +36,7 @@ function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
 
   vm.openNav = function() {
     document.getElementById('mySidenav').style.width = '250px';
+    document.getElementById('mySidenav').style.overflowX = 'visible';
     document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
     if (document.getElementById('myDropdown')) {
       document.getElementById('myDropdown').style.backgroundColor = 'rgba(0,0,0,-0.6)';
@@ -44,6 +45,7 @@ function MainCtrl($http, $rootScope, CurrentUserService, $state, API, User) {
 
   vm.closeNav = function (){
     document.getElementById('mySidenav').style.width = '0';
+    document.getElementById('mySidenav').style.overflowX = 'hidden';
     document.body.style.backgroundColor = '#FFFFFF';
     if (document.getElementById('myDropdown')) {
       document.getElementById('myDropdown').style.backgroundColor = '#FFFFFF';

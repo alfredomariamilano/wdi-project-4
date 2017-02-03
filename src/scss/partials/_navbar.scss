@@ -1,3 +1,35 @@
+div#mySidenav.sidenav::before {
+  content: "";
+  width: 10px;
+  height: 50%;
+  position: absolute;
+  right: -9px;
+  background-color: #111;
+  color: #111;
+  bottom: 0;
+  display: inline-block;
+  z-index: 1111;
+  -ms-transform: skewY(45deg); /* IE 9 */
+  -webkit-transform: skewY(45deg); /* Safari */
+  transform: skewY(45deg);
+}
+
+div#mySidenav.sidenav::after {
+  content: "";
+  width: 10px;
+  height: 25%;
+  position: absolute;
+  right: -19px;
+  background-color: #111;
+  color: #111;
+  bottom: 0;
+  display: inline-block;
+  z-index: 1111;
+  -ms-transform: skewY(45deg); /* IE 9 */
+  -webkit-transform: skewY(45deg); /* Safari */
+  transform: skewY(45deg);
+}
+
 .sidenav {
   height: 100%;
   width: 0;
